@@ -26,7 +26,7 @@ class OpenAIImage(object):
                 size=conf().get("image_create_size", "1024x1024"),  # 图片大小,可选有 256x256, 512x512, 1024x1024
             )
             image_url = response["data"][0]["url"]
-            logger.info("[OPEN_AI] image_url={}".format(image_url))
+            logger.info("[OPEN_AI] big_image_url={}".format(image_url))
             return True, image_url
         except openai.error.RateLimitError as e:
             logger.warn(e)
